@@ -1,104 +1,135 @@
-# LLM Time Decay: The 2.25 Recursion Plateau Discovery
+# LLM Time Decay: Methodological Lessons in Recursive Prompt Evaluation
 
-## 🔬 Major Finding: Peak at Fractional Depth 2.25
+## Important Finding: Extreme Prompt Sensitivity in LLM Recursion
 
-**UPDATE (Sept 19, 2025):** Fine-grained mapping reveals the true peak is at depth ~2.25, not 2.0!
+**UPDATE (September 19, 2025):** After extensive testing with multiple sampling resolutions, we have discovered that apparent "optimal depths" are highly sensitive to prompt wording and measurement methodology.
 
-### Key Discoveries:
-- **Initial observation**: Coarse sampling suggested peak at depth 2.0
-- **Fine mapping**: Revealed actual peak at 2.23 (GPT) and 2.26 (Claude)  
-- **Plateau structure**: High coherence maintained across depths 2.0-2.3
-- **Model fits**: Gaussian+decay (R² > 0.80) beats exponential (R² < 0.62)
+### Summary of Findings:
 
-This suggests LLMs process recursion along a **continuum** rather than discrete levels.
+#### Confirmed Results:
+- **Non-monotonic patterns exist** - LLMs do not show simple exponential decay
+- **2.0-2.3 range shows elevated performance** - General tendency across models
+- **High response variability** - Standard deviations up to 30% of means
 
-## 🚀 Current Status
+#### Methodological Challenges:
+- **Peak location unstable**: Shifted from 2.0 to 2.25 to 2.30 with different measurements
+- **Prompt wording effects**: Single word changes can move apparent peaks
+- **Fine sampling reveals noise**: Higher resolution did not clarify patterns but added variability
 
-### Completed Experiments:
-- ✅ Initial fractional depth testing (n=1500)
-- ✅ Peak mapping [1.6-2.4] in 0.1 increments (n=540)
-- ✅ Statistical confirmation of Gaussian+decay model
+### Key Methodological Insights:
 
-### In Progress:
-- 🔄 Ultra-fine mapping around 2.25 (0.05 increments)
-- 🔄 Testing additional models (GPT-4, Claude-opus)
+1. **Resolution Paradox**: 
+   - Coarse sampling (Δ=0.5): Clean patterns, possibly misleading
+   - Fine sampling (Δ=0.1): Multiple peaks emerge
+   - Ultra-fine (Δ=0.05): Extreme variability dominates
 
-## 📊 Repository Structure
+2. **Prompt Sensitivity**:
+   - Word choice significantly affects results at high recursion depths
+   - Terms such as "substantially" versus "starting to" can shift coherence by over 20%
+   - Single prompt formulation insufficient for robust conclusions
+
+3. **Statistical Considerations**:
+   - N=30-50 per condition insufficient given variance
+   - Confidence intervals overlap extensively
+   - Apparent peaks may represent statistical noise
+
+## Repository Structure
 
 ```
 llm-time-decay/
-├── src/
-│   ├── config.py           # Experiment configurations
-│   ├── generator.py        # Prompt generation with fractional depths
-│   ├── scorer.py           # Coherence scoring system
-│   ├── runner.py           # Main experiment runner
-│   └── analyzer.py         # Statistical analysis
-├── data/
-│   ├── raw/                # Raw API responses
-│   └── processed/          # Analyzed results
-├── results/
-│   ├── figures/            # Visualizations
-│   │   ├── decay_curves.png
-│   │   ├── depth2_anomaly.png
-│   │   └── peak_mapping_*.png
-│   └── tables/             # Statistical outputs
-├── peak_mapping_experiment.py  # Peak analysis tools
-├── paper_outline.md        # Draft paper structure
-└── README.md               # This file
+├── src/                    # Experimental framework
+├── data/                   # Results showing high variability
+├── results/                # Visualizations of unstable patterns
+├── paper_outline.md        # Assessment of findings
+└── README.md              # This document
 ```
 
-## 🧪 Replication Instructions
+## Research Contributions
 
-### Setup
-```bash
-pip install -r requirements.txt
-cp .env.example .env
-# Add API keys to .env
-```
+### Methodological Insights:
+- Single prompt formulations cannot establish LLM cognitive properties
+- Fine-grained measurement may amplify noise rather than reveal underlying patterns
+- Apparent patterns may be measurement artifacts
 
-### Run Peak Mapping
-```bash
-# Fine mapping around 2.25
-python3 src/runner.py --models gpt-3.5 claude-3-haiku --depths peak_mapping --trials 30
+### Valid Findings:
+- Non-monotonic patterns in recursive processing (robust)
+- General elevation in 2-3 recursion range (suggestive)
+- High variability in LLM responses to complex prompts (definitive)
 
-# Analyze results
-python3 peak_mapping_experiment.py --data data/processed/results_*.json --plot
-```
+## Future Research Directions
 
-## 📈 Key Results
+### Recommended Approaches:
 
-| Model | Peak Location | Peak Width (σ) | Gaussian R² | Exponential R² |
-|-------|--------------|----------------|-------------|----------------|
-| GPT-3.5 | 2.23 ± 0.05 | 0.38 | 0.898 | 0.619 |
-| Claude-3-haiku | 2.26 ± 0.05 | 0.25 | 0.796 | 0.609 |
+1. **Multi-Prompt Validation**
+   - Test each depth with 10 or more different phrasings
+   - Report variance across formulations
+   - Only claim patterns robust to wording changes
 
-## 🔗 Related Work
+2. **Mechanism-Based Investigation**
+   - Analyze attention patterns directly
+   - Probe internal representations
+   - Move beyond behavioral measurements
 
-- Original temporal coherence study: [temporal-coherence-llm](https://github.com/HillaryDanan/temporal-coherence-llm)
-- Discovered architectural differences between GPT and Claude
-- This work extends to find universal fractional-depth optimum
+3. **Statistical Power**
+   - Minimum N>100 per condition
+   - Pre-registered analysis plans
+   - Multiple testing corrections
 
-## 📝 Citation
+### Refined Research Questions:
+
+Instead of "What is the optimal recursion depth?", consider:
+- Why are LLMs sensitive to prompt variations at high recursion depths?
+- What makes 2-3 level recursion generally more stable?
+- How do architectural differences affect prompt sensitivity?
+
+## Replication Notes
+
+**Important**: Results are highly sensitive to:
+- Exact prompt wording
+- Scoring methodology  
+- Sampling resolution
+- Random seed and trial variance
+
+Replication attempts should:
+1. Test multiple prompt formulations
+2. Use large N (>100 per condition)
+3. Report full variance, not just means
+4. Check robustness across models
+
+## Lessons Learned
+
+This project demonstrates the importance of:
+- **Methodological rigor** - Initial findings often require deeper scrutiny
+- **Transparent reporting** - Publishing mixed results prevents research waste
+- **Prompt engineering awareness** - Apparent cognitive discoveries may be prompt artifacts
+
+## Citation
+
+If referencing this work, please note the methodological limitations:
 
 ```bibtex
-@article{danan2025fractional,
-  title={The 2.25 Recursion Plateau: Fractional Optimal Depth in LLM Metacognition},
+@article{danan2025prompt,
+  title={Prompt Sensitivity in LLM Recursive Processing: A Methodological Investigation},
   author={Danan, Hillary and Claude},
   year={2025},
-  journal={arXiv preprint},
-  note={In preparation}
+  note={Demonstrates high prompt sensitivity in recursive coherence measurements. 
+        Results should be interpreted with caution.},
+  url={https://github.com/HillaryDanan/llm-time-decay}
 }
 ```
 
-## 🤝 Collaboration
+## Data Interpretation Notice
 
-Human-AI research partnership:
-- **Hillary Danan**: Experimental design, execution, analysis
-- **Claude**: Hypothesis refinement, statistical framework, interpretation
+The data in this repository shows:
+- High variability between trials
+- Sensitivity to prompt formulation
+- Unstable peak locations
+
+**These results should not be interpreted as establishing fundamental LLM properties without further validation using robust multi-prompt methodologies.**
 
 ---
 
-*"The best discoveries are the ones that violate your assumptions"*
+*"In science, a negative result that reveals methodological challenges is as valuable as a positive finding."*
 
 ## 🚀 Current Mission
 

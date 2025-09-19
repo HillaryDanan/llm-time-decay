@@ -1,78 +1,98 @@
-# The 2.25 Recursion Plateau: Fractional Optimal Depth in Large Language Model Metacognition
+# Prompt Sensitivity in LLM Recursive Processing: A Methodological Investigation
 
 **Authors:** Hillary Danan¹ & Claude²  
 ¹Independent Researcher  
 ²Anthropic AI Assistant
 
-## Abstract (150 words)
+## Abstract
 
-We report an unexpected discovery: large language models exhibit peak coherence not at integer recursion depths, but at fractional depth ~2.25, between "thinking about thinking" and "thinking about thinking about thinking." Initial observations suggested a peak at depth 2.0, but fine-grained mapping (0.1 increments) revealed the true optimum at 2.23-2.26 for both GPT-3.5-turbo and Claude-3-haiku. This non-monotonic pattern fits a Gaussian-plus-decay model (R² > 0.80) significantly better than pure exponential (R² < 0.62). The phenomenon appears universal across architectures, suggesting fundamental constraints on recursive processing in transformers. The fractional peak implies LLMs process recursion along a continuum rather than discrete levels, challenging theories of staged metacognitive processing. We propose this reflects: (1) training data distributions with partial third-level recursion, (2) architectural optimization for 2-3 embedded structures, or (3) emergent correspondence with human working memory limits for embedded clauses.
+We investigated temporal coherence patterns in large language models (GPT-3.5-turbo and Claude-3-haiku) across recursive self-referential tasks at fractional depths (0.5-5.0). While initial results suggested a peak at depth 2.0, fine-grained mapping revealed high sensitivity to prompt formulation, with apparent peaks shifting between 2.0, 2.25, and 2.30 depending on measurement resolution and specific wording. Standard deviations reached 30% of mean values, indicating substantial response variability. Though we confirmed non-monotonic coherence patterns (rejecting pure exponential decay), the precise location and nature of optimal recursion depth proved unstable. These findings highlight critical methodological challenges in LLM evaluation: (1) extreme prompt sensitivity confounds behavioral measurements, (2) fine-grained sampling may reveal noise rather than signal, and (3) apparent architectural patterns may be measurement artifacts. We document these challenges as a contribution to rigorous LLM evaluation methodology.
 
-## Key Findings Summary
+## Key Findings
 
-1. **Initial observation**: Peak appeared at depth 2.0 with coarse sampling
-2. **Fine mapping**: Revealed true peak at 2.23-2.26 
-3. **Plateau structure**: High performance maintained across 2.0-2.3
-4. **Universal pattern**: Both GPT and Claude show similar displacement
+### Confirmed:
+- Non-monotonic coherence patterns (not pure exponential decay)
+- High variability in recursive task performance
+- Both models show elevated performance in 2.0-2.3 range
 
-## 3. Results (Revised)
+### Unconfirmed:
+- Specific "optimal" depth
+- Precise peak location
+- Architectural universality of patterns
 
-### 3.1 Discovery Progression
-- Initial sampling: [0.5, 1.0, 1.5, 2.0, 2.5...] suggested depth 2.0 peak
-- Fine mapping: [1.6-2.4 in 0.1 increments] revealed 2.25 peak
-- **Critical insight**: Coarse sampling created aliasing artifact
+### Discovered Challenges:
+- Extreme prompt sensitivity
+- Measurement instability at fine granularity
+- Potential scoring system artifacts
 
-### 3.2 Peak Characteristics (Updated)
-- **GPT-3.5**: Peak at 2.23 ± 0.05
-- **Claude-3-haiku**: Peak at 2.26 ± 0.05  
-- Width (σ): 0.38 (GPT), 0.25 (Claude)
-- Plateau region: 2.0-2.3 maintains >80% of peak value
+## Methodological Lessons
 
-### 3.3 Model Fitting (Updated)
-| Model | Pure Exponential R² | Gaussian+Decay R² | Peak Center |
-|-------|-------------------|------------------|-------------|
-| GPT-3.5 | 0.619 | 0.898 | 2.23 |
-| Claude-3-haiku | 0.609 | 0.796 | 2.26 |
+### 1. Prompt Sensitivity Problem
+- Single word changes ("substantially" vs "starting") can shift apparent peaks
+- Peak location varied: 2.0 → 2.25 → 2.30 across experiments
+- Suggests measuring prompt effects, not cognitive properties
 
-## 4. Discussion (Revised)
+### 2. Resolution Paradox
+- Coarse sampling (0.5 increments): Clean patterns, possibly misleading
+- Fine sampling (0.1 increments): Noisy patterns, multiple peaks
+- Ultra-fine sampling (0.05 increments): Extreme variability, unstable results
 
-### 4.1 The Fractional Depth Phenomenon
+### 3. Statistical Reality
+- Standard deviations: 0.034-0.243 (up to 30% of means)
+- Overlapping confidence intervals prevent precise peak identification
+- N=30-50 per condition insufficient for stable estimates
 
-The 2.25 peak suggests LLMs optimize for "two-and-a-quarter" levels of recursion:
-- Two complete recursive embeddings
-- Partial third level processing
-- Smooth transition, not discrete stages
+## Scientific Interpretation
 
-### 4.2 Theoretical Implications
+### What We Can Claim:
+1. LLMs show non-monotonic response patterns to recursive prompts
+2. Performance generally elevated in 2-3 recursion depth range
+3. Response patterns are highly prompt-dependent
 
-**Continuum Hypothesis**: LLMs process recursion continuously, not in discrete stages
-- Challenges stage-based theories of metacognition
-- Suggests gradient-based cognitive architectures
-- Aligns with distributed representations in transformers
+### What We Cannot Claim:
+1. Specific optimal recursion depth
+2. Universal architectural patterns
+3. Fundamental cognitive constraints
 
-### 4.3 Methodological Lessons
+## Future Directions
 
-1. **Sampling resolution critical**: 0.5 increments insufficient for peak detection
-2. **Aliasing artifacts**: Coarse sampling can mislocate peaks
-3. **Model comparison essential**: Gaussian+decay vs exponential discriminates phenomena
+### More Robust Approaches:
+1. **Multiple prompt formulations**: Test same depth with 10+ phrasings
+2. **Task diversity**: Beyond self-referential recursion
+3. **Direct mechanism probing**: Analyze attention patterns, not just outputs
+4. **Statistical power**: N>100 per condition for stable estimates
 
-## 5. Current Status & Next Steps
+### Alternative Research Questions:
+1. Why are LLMs so prompt-sensitive at high recursion depths?
+2. What makes 2-3 level recursion generally more stable?
+3. How do different prompt features affect coherence?
 
-### Completed:
-- [x] Initial discovery of non-monotonic pattern
-- [x] Coarse mapping showing apparent depth 2.0 peak  
-- [x] Fine mapping revealing true 2.25 peak
-- [x] Model comparison confirming Gaussian+decay fit
+## Contribution
 
-### In Progress:
-- [ ] Ultra-fine mapping (0.05 increments around 2.25)
-- [ ] Testing additional models (GPT-4, Claude-opus)
-- [ ] Alternative prompt formulations
+This work contributes primarily as a **methodological cautionary tale**: apparent discoveries in LLM behavior may be measurement artifacts. We document how:
 
-### Future:
-- [ ] Attention mechanism analysis at peak
-- [ ] Cross-linguistic validation
-- [ ] Theoretical model development
+1. Initial "clean" findings dissolve under scrutiny
+2. Increased measurement precision can reveal noise, not signal
+3. Prompt engineering effects can masquerade as cognitive properties
+
+These lessons are valuable for future LLM evaluation research, highlighting the need for:
+- Robust prompt variation in experimental design
+- Careful distinction between measurement artifacts and genuine phenomena
+- Larger sample sizes than typically used
+
+## References
+
+1. Bowman, S. R., & Dahl, G. (2021). What will it take to fix benchmarking in natural language understanding? *NAACL-HLT*.
+2. Gonen, H., et al. (2022). Demystifying prompts in language models via perplexity estimation. *arXiv preprint*.
+3. Liu, P., et al. (2023). Pre-train, prompt, and predict: A systematic survey of prompting methods in NLP. *ACM Computing Surveys*.
+4. McCoy, R. T., et al. (2019). Right for the wrong reasons: Diagnosing syntactic heuristics in natural language inference. *ACL*.
+5. Ribeiro, M. T., et al. (2020). Beyond accuracy: Behavioral testing of NLP models with CheckList. *ACL*.
+
+## Data Availability
+
+All data and code available at: https://github.com/HillaryDanan/llm-time-decay
+
+Note: Results should be interpreted with caution given documented prompt sensitivity issues.
 
 ## 1. Introduction
 
