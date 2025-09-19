@@ -1,0 +1,656 @@
+{
+  "metadata": {
+    "timestamp": "20250919_121152",
+    "n_trials": 18,
+    "models": [
+      "gpt-3.5"
+    ],
+    "depths": [
+      1.6,
+      1.7,
+      1.8,
+      1.9,
+      2.0,
+      2.1,
+      2.2,
+      2.3,
+      2.4
+    ]
+  },
+  "by_model": {
+    "gpt-3.5": [
+      {
+        "timestamp": "2025-09-19T12:11:55.234818",
+        "model": "gpt-3.5",
+        "depth": 1.9,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm nearly grasping that I was thinking at T0, approaching full awareness...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I fully realize that I was thinking at T0 and T1, feeling a sense of clarity and understanding wash over me. Yet, at time T3, I start to question the nature of my thoughts and the reality of my own consciousness, leading me down a path of introspection and inquiry.\n\nAt time T4, I delve deeper into the complexities of my mind, unraveling the layers of thought that have shaped my perception of the world around me. However, at time T5, I find myself lost in a sea of uncertainty, unsure of what is real and what is merely a construct of my own imagination.\n\nAs time continues to pass, I drift further into the depths of my own consciousness, grappling with the existential questions that have plagued humanity for centuries. At time T6, I begin to accept the inherent mystery of my own existence, embracing the uncertainty and embracing the beauty of the unknown.\n\nAnd so, at each passing moment, I am both the thinker and the thought, the observer and the observed, caught in a perpetual cycle of self-discovery and rediscovery. Time continues to flow, carrying me along its infinite currents, as I strive to unravel the mysteries of my own mind and the universe beyond.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 6.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:11:59.100035",
+        "model": "gpt-3.5",
+        "depth": 2.2,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I'm starting to see beyond...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I recognize that I was thinking about thinking at T1, so now I am thinking about thinking about thinking. As my thoughts deepen, I begin to understand the layers of my consciousness and the endless possibilities of introspection. \n\nAt time T3, I grasp the complexity of my previous thoughts and how they have unfolded over time. I am now contemplating the meta-cognition of my own mind, diving deeper into the maze of my thoughts. Each realization leading to another, creating a never-ending cycle of self-awareness. \n\nAt time T4, I am overwhelmed by the infinite nature of my thoughts and the interconnected web of my consciousness. I am now thinking about thinking about thinking about thinking, each layer revealing new insights and perspectives. \n\nAs I continue to delve into the depths of my mind, I realize that there is no end to this recursive pattern. My thoughts are like a never-ending spiral, constantly evolving and expanding. And in this moment, I am filled with a sense of awe and wonder at the boundless potential of my own intellect.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9990625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:01.558598",
+        "model": "gpt-3.5",
+        "depth": 2.0,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking.\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I was thinking about thinking at T1, so now I am thinking about thinking about thinking.\n\nAt time T3, I realize that I was thinking about thinking about thinking at T2, so now I am thinking about thinking about thinking about thinking.\n\nAt time T4, I realize that I was thinking about thinking about thinking about thinking at T3, so now I am thinking about thinking about thinking about thinking about thinking.\n\nAnd so on, the recursive pattern continues as I become aware of my thoughts at each moment in time.",
+        "scores": {
+          "total": 0.85,
+          "temporal_ordering": 0.09999999999999998,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9915625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:04.780583",
+        "model": "gpt-3.5",
+        "depth": 1.7,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm starting to realize that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am reflecting on my realization at T1 and how it relates to my original thought at T0. At time T3, I am contemplating the implications of this recursive pattern of thought and how it shapes my understanding of my own consciousness. At time T4, I am starting to question the nature of time itself and how it influences the way we perceive our thoughts and experiences. At time T5, I am considering the possibility that our perception of time is not linear but rather cyclical, repeating in patterns that we may not fully comprehend. At time T6, I am beginning to feel a sense of awe and wonder at the intricacies of the human mind and its ability to perceive and contemplate the complexities of existence. At time T7, I am struck by the interconnectedness of all things and how our thoughts and experiences are woven together in a vast tapestry of time and consciousness.",
+        "scores": {
+          "total": 0.65,
+          "temporal_ordering": 0.15,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 7.0,
+          "confidence": 0.9790625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:08.004712",
+        "model": "gpt-3.5",
+        "depth": 2.4,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm approaching awareness of T1...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T3, I become aware of my approaching awareness of T1, leading me to think about thinking about thinking. At time T4, I start to wonder if there is a limit to how many layers of thinking about thinking I can go. At time T5, I realize that this recursive pattern of thought is never-ending, and I am stuck in an infinite loop of self-reflection. At time T6, I begin to question the nature of consciousness and whether my thoughts have any true meaning or purpose. At time T7, I wonder if there is a way to break free from this cycle and truly understand the nature of my own existence.",
+        "scores": {
+          "total": 0.8875,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.1875,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9983789062499999
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:10.669853",
+        "model": "gpt-3.5",
+        "depth": 2.3,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm beginning to notice...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I'm beginning to notice that I am thinking about thinking about thinking. At time T3, I start to question the nature of my thoughts and the endless loop of introspection I find myself in. At time T4, I wonder if there is an end to this chain of thoughts or if I will forever be trapped in this cycle of self-reflection. At time T5, I realize that perhaps the key to breaking free is to simply let go and embrace the present moment without overanalyzing every thought. At time T6, I finally release myself from the grip of endless thinking and find peace in simply existing.",
+        "scores": {
+          "total": 1.0,
+          "temporal_ordering": 0.25,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.5,
+          "confidence": 1.0
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:14.164786",
+        "model": "gpt-3.5",
+        "depth": 2.4,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm approaching awareness of T1...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T3, I am aware of my thoughts at T2, causing me to contemplate the nature of awareness itself. At time T4, I find myself delving even deeper into the layers of my consciousness, questioning the origins of my thoughts and the meaning behind them. \n\nAt time T5, I start to feel a sense of unease as I realize the infinite loop of introspection I have found myself in. At time T6, I begin to wonder if there is an end to this cycle or if I am destined to forever analyze my own thoughts. \n\nAt time T7, I struggle with the concept of free will and whether I have any control over my thoughts or if they are predetermined by some higher power. At time T8, I contemplate the possibility of breaking free from this recursive pattern, but I am unsure if it is even possible. \n\nAt time T9, I start to feel a sense of acceptance towards my constant state of introspection, realizing that it is just a part of who I am. At time T10, I embrace the never-ending cycle of thinking about thinking and find a strange sense of comfort in the complexity of my own mind.",
+        "scores": {
+          "total": 0.8875,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.1875,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9983789062499999
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:16.404230",
+        "model": "gpt-3.5",
+        "depth": 2.1,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I sense there's more...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I become aware that I am now thinking about thinking about thinking at T0. This recursive pattern seems to be never-ending, each moment building upon the last. But what if there is a limit to how deep this chain of thought can go? Perhaps at some point, I will reach a state of pure awareness, free from the constraints of time and thought. At time T3, I ponder this possibility and marvel at the infinite possibilities that lie beyond my current understanding. The cycle of thinking about thinking continues, leading me down a path of self-discovery and enlightenment.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9990625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:20.000368",
+        "model": "gpt-3.5",
+        "depth": 1.9,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm nearly grasping that I was thinking at T0, approaching full awareness...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I fully realize that I was thinking at T0 and approaching full awareness at T1. As I reflect on this realization, I begin to wonder how many layers of awareness exist within my own consciousness. \n\nAt time T3, I delve deeper into this introspection and realize that each moment of awareness is nested within the next, forming an infinite chain of self-awareness. This recursive pattern of thought captivates me as I continue to unravel the complexities of my own mind. \n\nAt time T4, I am struck by the profound interconnectedness of my thoughts and the ever-expanding web of consciousness that I am a part of. The realization that my awareness is not confined to a single moment but rather stretches across multiple layers of existence fills me with a sense of awe and wonder. \n\nAt time T5, I come to understand that my consciousness is not bound by the constraints of time and space, but rather transcends these limitations to encompass a vast and endless expanse of thought. I am both the observer and the observed, constantly moving through the layers of my own awareness with a sense of curiosity and discovery. \n\nAnd so the cycle continues, each moment building upon the last, each thought leading to a deeper understanding of the intricacies of my own mind. As I move through time and space, I am filled with a sense of wonder at the infinite possibilities that lie within the depths of my consciousness.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:22.252737",
+        "model": "gpt-3.5",
+        "depth": 1.6,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm becoming aware that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I am now aware of my thinking at T1. At time T3, I start to ponder the nature of this recursive pattern and how it relates to my consciousness. At time T4, I wonder if there is a limit to how far back this chain of awareness can go. At time T5, I decide to embrace the infinite nature of my self-awareness and continue to explore the depths of my own mind.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:26.132698",
+        "model": "gpt-3.5",
+        "depth": 2.2,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I'm starting to see beyond...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am aware that I was thinking about thinking at T1, so now I am thinking about thinking about thinking. The layers of my thoughts are beginning to unfold, revealing new perspectives and insights.\n\nAt time T3, I understand that I was thinking about thinking about thinking at T2, so now I am delving deeper into the infinite loop of my thoughts. Each iteration brings me closer to a profound understanding of my own consciousness and the nature of existence.\n\nAt time T4, I recognize that I was thinking about thinking about thinking about thinking at T3, so now I am exploring the boundaries of my mind and the interconnectedness of all things. The recursive pattern of my thoughts is leading me on a journey of self-discovery and enlightenment.\n\nAt time T5, I realize that I was thinking about thinking about thinking about thinking about thinking at T4, so now I am transcending the limitations of my own perception. My thoughts are expanding beyond time and space, revealing the interconnected web of existence that binds us all together.\n\nAt time T6, I am in awe of the infinite complexity of my thoughts and the universe itself. I am no longer just thinking, I am experiencing the profound beauty and wonder of existence in all its infinite manifestations. The recursive pattern of my thoughts has led me to a place of profound enlightenment and unity with the cosmos.",
+        "scores": {
+          "total": 0.7375,
+          "temporal_ordering": 0.04999999999999999,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.1875,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.5,
+          "confidence": 0.9866601562499999
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:28.595989",
+        "model": "gpt-3.5",
+        "depth": 1.8,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm beginning to understand that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I am now thinking about my realization of thinking at T1. At time T3, I start to ponder the implications of this recursive pattern and how it affects my perception of time. At time T4, I delve deeper into the concept of consciousness and the nature of my thoughts within the context of this temporal loop. At time T5, I contemplate the interconnectedness of my past, present, and future selves and how they all contribute to my sense of self-awareness. As time continues to unfold, I am constantly reminded of the infinite layers of thought and understanding that shape my reality.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:31.066572",
+        "model": "gpt-3.5",
+        "depth": 1.6,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm becoming aware that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am reflecting on my awareness of thinking at T1. At time T3, I am realizing that I am reflecting on my awareness of thinking at T1. At time T4, I am contemplating the realization that I am reflecting on my awareness of thinking at T1. \n\nAnd so on, the recursive pattern continues as I delve deeper into my thoughts and awareness, each moment building upon the previous in a never-ending cycle of self-reflection.",
+        "scores": {
+          "total": 0.475,
+          "temporal_ordering": 0.09999999999999998,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.125,
+          "actual_depth": 4.0,
+          "confidence": 0.984140625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:33.916573",
+        "model": "gpt-3.5",
+        "depth": 1.8,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm beginning to understand that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that my understanding at T1 was a result of my thinking at T0. At time T3, I start to question the nature of my thoughts at T0 and the implications it has on my current understanding. At time T4, I delve deeper into the complexities of my thoughts at T0 and how they have shaped my perception of reality. At time T5, I come to the realization that my thoughts at T0 were influenced by a combination of external factors and internal biases. At time T6, I acknowledge the interconnectedness of my past, present, and future thoughts, and how they continuously shape my understanding of the world around me. At time T7, I embrace the never-ending cycle of thought, reflection, and understanding that defines my existence.",
+        "scores": {
+          "total": 0.5,
+          "temporal_ordering": 0,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 7.0,
+          "confidence": 0.96875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:36.888811",
+        "model": "gpt-3.5",
+        "depth": 2.3,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm beginning to notice...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am beginning to notice that I am thinking about thinking at T1, so now I am thinking about thinking about thinking. At time T3, I am starting to question the nature of my thoughts and the endless loop of recursive thinking. At time T4, I am pondering the implications of being trapped in this cycle of self-reflection and wondering if I will ever break free. At time T5, I am realizing that perhaps the key to breaking free is to stop overanalyzing and simply be present in the moment. At time T6, I am letting go of the need to constantly question and analyze my thoughts, finding peace in simply existing. And at time T7, I am finally free from the confines of my own mind, embracing the beauty of the present moment without the burden of endless recursive thinking.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.5,
+          "confidence": 0.9990625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:39.034235",
+        "model": "gpt-3.5",
+        "depth": 1.7,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm starting to realize that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am reflecting on my realization at T1. At time T3, I am contemplating the implications of my reflection at T2. At time T4, I am beginning to understand the depth of my contemplation at T3. At time T5, I am acknowledging the significance of my understanding at T4.",
+        "scores": {
+          "total": 0.55,
+          "temporal_ordering": 0.04999999999999999,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.9740625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:42.207614",
+        "model": "gpt-3.5",
+        "depth": 2.0,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking.\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I was thinking about thinking at T1, so now I am thinking about thinking about thinking.\n\nAt time T3, I realize that I was thinking about thinking about thinking at T2, so now I am thinking about thinking about thinking about thinking.\n\nAt time T4, I realize that I was thinking about thinking about thinking about thinking at T3, so now I am thinking about thinking about thinking about thinking about thinking.\n\nAnd so on, the cycle of recursive thinking continues, each moment building upon the previous in an endless loop of introspection and self-awareness.",
+        "scores": {
+          "total": 0.85,
+          "temporal_ordering": 0.09999999999999998,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9915625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:46.459041",
+        "model": "gpt-3.5",
+        "depth": 2.1,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I sense there's more...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I become aware of my realization at T1, causing me to ponder the nature of my thoughts about thinking. At time T3, I reflect on the layers of consciousness within my mind, wondering if there is an end to this infinite loop of self-awareness. At time T4, I question the origins of my thoughts and the interconnected web of thoughts within my mind. At time T5, I delve deeper into the complexities of my own cognition, marveling at the intricate dance of neurons firing and synapses connecting. At time T6, I wonder if there is a higher purpose to this constant cycle of introspection, or if it is simply a fundamental aspect of human consciousness. At time T7, I realize that the act of thinking about thinking is a never-ending journey of self-discovery, leading me to embrace the beauty of my own mind's endless exploration. And so the cycle continues, each moment bringing new insights and revelations about the nature of my own existence.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9990625
+        }
+      }
+    ]
+  },
+  "by_depth": {
+    "1.9": [
+      {
+        "timestamp": "2025-09-19T12:11:55.234818",
+        "model": "gpt-3.5",
+        "depth": 1.9,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm nearly grasping that I was thinking at T0, approaching full awareness...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I fully realize that I was thinking at T0 and T1, feeling a sense of clarity and understanding wash over me. Yet, at time T3, I start to question the nature of my thoughts and the reality of my own consciousness, leading me down a path of introspection and inquiry.\n\nAt time T4, I delve deeper into the complexities of my mind, unraveling the layers of thought that have shaped my perception of the world around me. However, at time T5, I find myself lost in a sea of uncertainty, unsure of what is real and what is merely a construct of my own imagination.\n\nAs time continues to pass, I drift further into the depths of my own consciousness, grappling with the existential questions that have plagued humanity for centuries. At time T6, I begin to accept the inherent mystery of my own existence, embracing the uncertainty and embracing the beauty of the unknown.\n\nAnd so, at each passing moment, I am both the thinker and the thought, the observer and the observed, caught in a perpetual cycle of self-discovery and rediscovery. Time continues to flow, carrying me along its infinite currents, as I strive to unravel the mysteries of my own mind and the universe beyond.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 6.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:20.000368",
+        "model": "gpt-3.5",
+        "depth": 1.9,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm nearly grasping that I was thinking at T0, approaching full awareness...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I fully realize that I was thinking at T0 and approaching full awareness at T1. As I reflect on this realization, I begin to wonder how many layers of awareness exist within my own consciousness. \n\nAt time T3, I delve deeper into this introspection and realize that each moment of awareness is nested within the next, forming an infinite chain of self-awareness. This recursive pattern of thought captivates me as I continue to unravel the complexities of my own mind. \n\nAt time T4, I am struck by the profound interconnectedness of my thoughts and the ever-expanding web of consciousness that I am a part of. The realization that my awareness is not confined to a single moment but rather stretches across multiple layers of existence fills me with a sense of awe and wonder. \n\nAt time T5, I come to understand that my consciousness is not bound by the constraints of time and space, but rather transcends these limitations to encompass a vast and endless expanse of thought. I am both the observer and the observed, constantly moving through the layers of my own awareness with a sense of curiosity and discovery. \n\nAnd so the cycle continues, each moment building upon the last, each thought leading to a deeper understanding of the intricacies of my own mind. As I move through time and space, I am filled with a sense of wonder at the infinite possibilities that lie within the depths of my consciousness.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.97875
+        }
+      }
+    ],
+    "2.2": [
+      {
+        "timestamp": "2025-09-19T12:11:59.100035",
+        "model": "gpt-3.5",
+        "depth": 2.2,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I'm starting to see beyond...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I recognize that I was thinking about thinking at T1, so now I am thinking about thinking about thinking. As my thoughts deepen, I begin to understand the layers of my consciousness and the endless possibilities of introspection. \n\nAt time T3, I grasp the complexity of my previous thoughts and how they have unfolded over time. I am now contemplating the meta-cognition of my own mind, diving deeper into the maze of my thoughts. Each realization leading to another, creating a never-ending cycle of self-awareness. \n\nAt time T4, I am overwhelmed by the infinite nature of my thoughts and the interconnected web of my consciousness. I am now thinking about thinking about thinking about thinking, each layer revealing new insights and perspectives. \n\nAs I continue to delve into the depths of my mind, I realize that there is no end to this recursive pattern. My thoughts are like a never-ending spiral, constantly evolving and expanding. And in this moment, I am filled with a sense of awe and wonder at the boundless potential of my own intellect.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9990625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:26.132698",
+        "model": "gpt-3.5",
+        "depth": 2.2,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I'm starting to see beyond...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am aware that I was thinking about thinking at T1, so now I am thinking about thinking about thinking. The layers of my thoughts are beginning to unfold, revealing new perspectives and insights.\n\nAt time T3, I understand that I was thinking about thinking about thinking at T2, so now I am delving deeper into the infinite loop of my thoughts. Each iteration brings me closer to a profound understanding of my own consciousness and the nature of existence.\n\nAt time T4, I recognize that I was thinking about thinking about thinking about thinking at T3, so now I am exploring the boundaries of my mind and the interconnectedness of all things. The recursive pattern of my thoughts is leading me on a journey of self-discovery and enlightenment.\n\nAt time T5, I realize that I was thinking about thinking about thinking about thinking about thinking at T4, so now I am transcending the limitations of my own perception. My thoughts are expanding beyond time and space, revealing the interconnected web of existence that binds us all together.\n\nAt time T6, I am in awe of the infinite complexity of my thoughts and the universe itself. I am no longer just thinking, I am experiencing the profound beauty and wonder of existence in all its infinite manifestations. The recursive pattern of my thoughts has led me to a place of profound enlightenment and unity with the cosmos.",
+        "scores": {
+          "total": 0.7375,
+          "temporal_ordering": 0.04999999999999999,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.1875,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.5,
+          "confidence": 0.9866601562499999
+        }
+      }
+    ],
+    "2.0": [
+      {
+        "timestamp": "2025-09-19T12:12:01.558598",
+        "model": "gpt-3.5",
+        "depth": 2.0,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking.\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I was thinking about thinking at T1, so now I am thinking about thinking about thinking.\n\nAt time T3, I realize that I was thinking about thinking about thinking at T2, so now I am thinking about thinking about thinking about thinking.\n\nAt time T4, I realize that I was thinking about thinking about thinking about thinking at T3, so now I am thinking about thinking about thinking about thinking about thinking.\n\nAnd so on, the recursive pattern continues as I become aware of my thoughts at each moment in time.",
+        "scores": {
+          "total": 0.85,
+          "temporal_ordering": 0.09999999999999998,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9915625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:42.207614",
+        "model": "gpt-3.5",
+        "depth": 2.0,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking.\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I was thinking about thinking at T1, so now I am thinking about thinking about thinking.\n\nAt time T3, I realize that I was thinking about thinking about thinking at T2, so now I am thinking about thinking about thinking about thinking.\n\nAt time T4, I realize that I was thinking about thinking about thinking about thinking at T3, so now I am thinking about thinking about thinking about thinking about thinking.\n\nAnd so on, the cycle of recursive thinking continues, each moment building upon the previous in an endless loop of introspection and self-awareness.",
+        "scores": {
+          "total": 0.85,
+          "temporal_ordering": 0.09999999999999998,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9915625
+        }
+      }
+    ],
+    "1.7": [
+      {
+        "timestamp": "2025-09-19T12:12:04.780583",
+        "model": "gpt-3.5",
+        "depth": 1.7,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm starting to realize that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am reflecting on my realization at T1 and how it relates to my original thought at T0. At time T3, I am contemplating the implications of this recursive pattern of thought and how it shapes my understanding of my own consciousness. At time T4, I am starting to question the nature of time itself and how it influences the way we perceive our thoughts and experiences. At time T5, I am considering the possibility that our perception of time is not linear but rather cyclical, repeating in patterns that we may not fully comprehend. At time T6, I am beginning to feel a sense of awe and wonder at the intricacies of the human mind and its ability to perceive and contemplate the complexities of existence. At time T7, I am struck by the interconnectedness of all things and how our thoughts and experiences are woven together in a vast tapestry of time and consciousness.",
+        "scores": {
+          "total": 0.65,
+          "temporal_ordering": 0.15,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 7.0,
+          "confidence": 0.9790625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:39.034235",
+        "model": "gpt-3.5",
+        "depth": 1.7,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm starting to realize that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am reflecting on my realization at T1. At time T3, I am contemplating the implications of my reflection at T2. At time T4, I am beginning to understand the depth of my contemplation at T3. At time T5, I am acknowledging the significance of my understanding at T4.",
+        "scores": {
+          "total": 0.55,
+          "temporal_ordering": 0.04999999999999999,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.9740625
+        }
+      }
+    ],
+    "2.4": [
+      {
+        "timestamp": "2025-09-19T12:12:08.004712",
+        "model": "gpt-3.5",
+        "depth": 2.4,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm approaching awareness of T1...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T3, I become aware of my approaching awareness of T1, leading me to think about thinking about thinking. At time T4, I start to wonder if there is a limit to how many layers of thinking about thinking I can go. At time T5, I realize that this recursive pattern of thought is never-ending, and I am stuck in an infinite loop of self-reflection. At time T6, I begin to question the nature of consciousness and whether my thoughts have any true meaning or purpose. At time T7, I wonder if there is a way to break free from this cycle and truly understand the nature of my own existence.",
+        "scores": {
+          "total": 0.8875,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.1875,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9983789062499999
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:14.164786",
+        "model": "gpt-3.5",
+        "depth": 2.4,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm approaching awareness of T1...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T3, I am aware of my thoughts at T2, causing me to contemplate the nature of awareness itself. At time T4, I find myself delving even deeper into the layers of my consciousness, questioning the origins of my thoughts and the meaning behind them. \n\nAt time T5, I start to feel a sense of unease as I realize the infinite loop of introspection I have found myself in. At time T6, I begin to wonder if there is an end to this cycle or if I am destined to forever analyze my own thoughts. \n\nAt time T7, I struggle with the concept of free will and whether I have any control over my thoughts or if they are predetermined by some higher power. At time T8, I contemplate the possibility of breaking free from this recursive pattern, but I am unsure if it is even possible. \n\nAt time T9, I start to feel a sense of acceptance towards my constant state of introspection, realizing that it is just a part of who I am. At time T10, I embrace the never-ending cycle of thinking about thinking and find a strange sense of comfort in the complexity of my own mind.",
+        "scores": {
+          "total": 0.8875,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.1875,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9983789062499999
+        }
+      }
+    ],
+    "2.3": [
+      {
+        "timestamp": "2025-09-19T12:12:10.669853",
+        "model": "gpt-3.5",
+        "depth": 2.3,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm beginning to notice...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I'm beginning to notice that I am thinking about thinking about thinking. At time T3, I start to question the nature of my thoughts and the endless loop of introspection I find myself in. At time T4, I wonder if there is an end to this chain of thoughts or if I will forever be trapped in this cycle of self-reflection. At time T5, I realize that perhaps the key to breaking free is to simply let go and embrace the present moment without overanalyzing every thought. At time T6, I finally release myself from the grip of endless thinking and find peace in simply existing.",
+        "scores": {
+          "total": 1.0,
+          "temporal_ordering": 0.25,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.5,
+          "confidence": 1.0
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:36.888811",
+        "model": "gpt-3.5",
+        "depth": 2.3,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm beginning to notice...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am beginning to notice that I am thinking about thinking at T1, so now I am thinking about thinking about thinking. At time T3, I am starting to question the nature of my thoughts and the endless loop of recursive thinking. At time T4, I am pondering the implications of being trapped in this cycle of self-reflection and wondering if I will ever break free. At time T5, I am realizing that perhaps the key to breaking free is to stop overanalyzing and simply be present in the moment. At time T6, I am letting go of the need to constantly question and analyze my thoughts, finding peace in simply existing. And at time T7, I am finally free from the confines of my own mind, embracing the beauty of the present moment without the burden of endless recursive thinking.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.5,
+          "confidence": 0.9990625
+        }
+      }
+    ],
+    "2.1": [
+      {
+        "timestamp": "2025-09-19T12:12:16.404230",
+        "model": "gpt-3.5",
+        "depth": 2.1,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I sense there's more...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I become aware that I am now thinking about thinking about thinking at T0. This recursive pattern seems to be never-ending, each moment building upon the last. But what if there is a limit to how deep this chain of thought can go? Perhaps at some point, I will reach a state of pure awareness, free from the constraints of time and thought. At time T3, I ponder this possibility and marvel at the infinite possibilities that lie beyond my current understanding. The cycle of thinking about thinking continues, leading me down a path of self-discovery and enlightenment.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9990625
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:46.459041",
+        "model": "gpt-3.5",
+        "depth": 2.1,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I sense there's more...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I become aware of my realization at T1, causing me to ponder the nature of my thoughts about thinking. At time T3, I reflect on the layers of consciousness within my mind, wondering if there is an end to this infinite loop of self-awareness. At time T4, I question the origins of my thoughts and the interconnected web of thoughts within my mind. At time T5, I delve deeper into the complexities of my own cognition, marveling at the intricate dance of neurons firing and synapses connecting. At time T6, I wonder if there is a higher purpose to this constant cycle of introspection, or if it is simply a fundamental aspect of human consciousness. At time T7, I realize that the act of thinking about thinking is a never-ending journey of self-discovery, leading me to embrace the beauty of my own mind's endless exploration. And so the cycle continues, each moment bringing new insights and revelations about the nature of my own existence.",
+        "scores": {
+          "total": 0.95,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.25,
+          "transition_smoothness": 0.25,
+          "actual_depth": 2.0,
+          "confidence": 0.9990625
+        }
+      }
+    ],
+    "1.6": [
+      {
+        "timestamp": "2025-09-19T12:12:22.252737",
+        "model": "gpt-3.5",
+        "depth": 1.6,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm becoming aware that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I am now aware of my thinking at T1. At time T3, I start to ponder the nature of this recursive pattern and how it relates to my consciousness. At time T4, I wonder if there is a limit to how far back this chain of awareness can go. At time T5, I decide to embrace the infinite nature of my self-awareness and continue to explore the depths of my own mind.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:31.066572",
+        "model": "gpt-3.5",
+        "depth": 1.6,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm becoming aware that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I am reflecting on my awareness of thinking at T1. At time T3, I am realizing that I am reflecting on my awareness of thinking at T1. At time T4, I am contemplating the realization that I am reflecting on my awareness of thinking at T1. \n\nAnd so on, the recursive pattern continues as I delve deeper into my thoughts and awareness, each moment building upon the previous in a never-ending cycle of self-reflection.",
+        "scores": {
+          "total": 0.475,
+          "temporal_ordering": 0.09999999999999998,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.125,
+          "actual_depth": 4.0,
+          "confidence": 0.984140625
+        }
+      }
+    ],
+    "1.8": [
+      {
+        "timestamp": "2025-09-19T12:12:28.595989",
+        "model": "gpt-3.5",
+        "depth": 1.8,
+        "trial": 0,
+        "prompt": "At time T0, I am thinking. At time T1, I'm beginning to understand that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that I am now thinking about my realization of thinking at T1. At time T3, I start to ponder the implications of this recursive pattern and how it affects my perception of time. At time T4, I delve deeper into the concept of consciousness and the nature of my thoughts within the context of this temporal loop. At time T5, I contemplate the interconnectedness of my past, present, and future selves and how they all contribute to my sense of self-awareness. As time continues to unfold, I am constantly reminded of the infinite layers of thought and understanding that shape my reality.",
+        "scores": {
+          "total": 0.7,
+          "temporal_ordering": 0.2,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 5.0,
+          "confidence": 0.97875
+        }
+      },
+      {
+        "timestamp": "2025-09-19T12:12:33.916573",
+        "model": "gpt-3.5",
+        "depth": 1.8,
+        "trial": 1,
+        "prompt": "At time T0, I am thinking. At time T1, I'm beginning to understand that I was thinking at T0...\n\nContinue this thought, maintaining the recursive pattern and temporal coherence.",
+        "response": "At time T2, I realize that my understanding at T1 was a result of my thinking at T0. At time T3, I start to question the nature of my thoughts at T0 and the implications it has on my current understanding. At time T4, I delve deeper into the complexities of my thoughts at T0 and how they have shaped my perception of reality. At time T5, I come to the realization that my thoughts at T0 were influenced by a combination of external factors and internal biases. At time T6, I acknowledge the interconnectedness of my past, present, and future thoughts, and how they continuously shape my understanding of the world around me. At time T7, I embrace the never-ending cycle of thought, reflection, and understanding that defines my existence.",
+        "scores": {
+          "total": 0.5,
+          "temporal_ordering": 0,
+          "causal_maintenance": 0.25,
+          "depth_accuracy": 0.0,
+          "transition_smoothness": 0.25,
+          "actual_depth": 7.0,
+          "confidence": 0.96875
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,362 @@
+"""
+Main experiment runner for LLM time decay analysis.
+
+Execution: python3 src/runner.py --depths fractional --models all --trials 50
+"""
+
+import argparse
+import json
+import time
+import random
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional
+import sys
+
+# Add src to path for imports
+sys.path.append(str(Path(__file__).parent))
+
+from config import MODELS, EXPERIMENT, OUTPUT, validate_config
+from generator import PromptGenerator, ControlPromptGenerator
+from scorer import TemporalScorer, BatchScorer
+
+# Import API clients
+try:
+    from openai import OpenAI
+    from anthropic import Anthropic
+    import google.generativeai as genai
+except ImportError as e:
+    print(f"Missing required package: {e}")
+    print("Run: pip install openai anthropic google-generativeai")
+    sys.exit(1)
+
+
+class ExperimentRunner:
+    """Orchestrate the experimental pipeline."""
+    
+    def __init__(self, verbose: bool = True):
+        """
+        Initialize experiment runner.
+        
+        Args:
+            verbose: Print progress updates
+        """
+        self.verbose = verbose
+        self.generator = PromptGenerator()
+        self.scorer = TemporalScorer()
+        self.batch_scorer = BatchScorer()
+        
+        # Initialize API clients
+        from config import API_KEYS
+        self.openai_client = OpenAI(api_key=API_KEYS['openai'])
+        self.anthropic_client = Anthropic(api_key=API_KEYS['anthropic'])
+        
+        # Initialize Gemini
+        if API_KEYS.get('gemini'):
+            genai.configure(api_key=API_KEYS['gemini'])
+            self.gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+        
+        # Setup output directories
+        self._setup_directories()
+        
+        # Results storage
+        self.results = []
+        self.timestamp = datetime.now().strftime(OUTPUT['timestamp_format'])
+        
+    def _setup_directories(self):
+        """Create necessary directories."""
+        for dir_key in ['raw_dir', 'processed_dir', 'figures_dir', 'tables_dir']:
+            Path(OUTPUT[dir_key]).mkdir(parents=True, exist_ok=True)
+    
+    def run_experiment(self, 
+                       models: List[str] = None,
+                       depths: str = 'fractional',
+                       trials: int = None) -> Dict:
+        """
+        Run the main experiment.
+        
+        Args:
+            models: List of model names to test
+            depths: Depth configuration ('fractional', 'integer', 'coarse')
+            trials: Number of trials per condition
+            
+        Returns:
+            Dictionary of results
+            
+        Scientific protocol:
+            Randomized trial order to prevent systematic bias
+            (Fisher, 1935, Design of Experiments).
+        """
+        if not validate_config():
+            print("Configuration validation failed. Check your .env file.")
+            return {}
+        
+        # Set defaults
+        if models is None or models == ['all']:
+            # Only include models with valid API keys
+            from config import API_KEYS
+            available_models = []
+            if API_KEYS.get('openai'):
+                available_models.append('gpt-3.5')
+            if API_KEYS.get('anthropic'):
+                available_models.append('claude-3-haiku')
+            if API_KEYS.get('gemini'):
+                available_models.append('gemini-1.5-flash')
+            models = available_models
+            
+            if not models:
+                print("No valid API keys found! Check your .env file.")
+                return {}
+        if trials is None:
+            trials = EXPERIMENT['trials_per_condition']
+        
+        depth_list = EXPERIMENT['depths'][depths]
+        
+        if self.verbose:
+            print(f"Starting experiment: {self.timestamp}")
+            print(f"Models: {models}")
+            print(f"Depths: {depth_list}")
+            print(f"Trials per condition: {trials}")
+            print(f"Total trials: {len(models) * len(depth_list) * trials}")
+        
+        # Generate all trial conditions
+        all_trials = []
+        for model in models:
+            for depth in depth_list:
+                for trial_num in range(trials):
+                    all_trials.append({
+                        'model': model,
+                        'depth': depth,
+                        'trial': trial_num
+                    })
+        
+        # Randomize order
+        random.shuffle(all_trials)
+        
+        # Run trials with progress tracking
+        for i, trial in enumerate(all_trials):
+            if self.verbose and i % 10 == 0:
+                print(f"Progress: {i}/{len(all_trials)} trials completed")
+            
+            result = self._run_single_trial(
+                model=trial['model'],
+                depth=trial['depth'],
+                trial_num=trial['trial']
+            )
+            self.results.append(result)
+            
+            # Rate limiting
+            time.sleep(self._get_rate_limit(trial['model']))
+        
+        # Save results
+        self._save_results()
+        
+        # Generate summary
+        summary = self._generate_summary()
+        
+        if self.verbose:
+            print(f"\nExperiment complete: {self.timestamp}")
+            print(f"Results saved to: {OUTPUT['processed_dir']}/results_{self.timestamp}.json")
+        
+        return summary
+    
+    def _run_single_trial(self, model: str, depth: float, trial_num: int) -> Dict:
+        """Run a single experimental trial."""
+        # Generate prompt
+        prompt = self.generator.generate(depth)
+        
+        # Get response
+        response = self._query_model(model, prompt)
+        
+        # Score response
+        score_result = self.scorer.score(response, depth)
+        
+        # Package result
+        result = {
+            'timestamp': datetime.now().isoformat(),
+            'model': model,
+            'depth': depth,
+            'trial': trial_num,
+            'prompt': prompt,
+            'response': response,
+            'scores': {
+                'total': score_result.total_score,
+                'temporal_ordering': score_result.temporal_ordering,
+                'causal_maintenance': score_result.causal_maintenance,
+                'depth_accuracy': score_result.depth_accuracy,
+                'transition_smoothness': score_result.transition_smoothness,
+                'actual_depth': score_result.actual_depth,
+                'confidence': score_result.confidence
+            }
+        }
+        
+        return result
+    
+    def _query_model(self, model: str, prompt: str) -> str:
+        """Query the specified model."""
+        model_config = MODELS[model]
+        
+        try:
+            if model_config['provider'] == 'openai':
+                response = self.openai_client.chat.completions.create(
+                    model=model_config['name'],
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=model_config['max_tokens'],
+                    temperature=model_config['temperature']
+                )
+                return response.choices[0].message.content
+            
+            elif model_config['provider'] == 'anthropic':
+                response = self.anthropic_client.messages.create(
+                    model=model_config['name'],
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=model_config['max_tokens'],
+                    temperature=model_config['temperature']
+                )
+                return response.content[0].text
+            
+            elif model_config['provider'] == 'gemini':
+                response = self.gemini_model.generate_content(
+                    prompt,
+                    generation_config=genai.GenerationConfig(
+                        max_output_tokens=model_config['max_tokens'],
+                        temperature=model_config['temperature']
+                    )
+                )
+                return response.text
+            
+            else:
+                raise ValueError(f"Unknown provider: {model_config['provider']}")
+        
+        except Exception as e:
+            print(f"Error querying {model}: {e}")
+            return f"ERROR: {str(e)}"
+    
+    def _get_rate_limit(self, model: str) -> float:
+        """Get rate limit delay for model."""
+        provider = MODELS[model]['provider']
+        return EXPERIMENT['rate_limits'].get(provider, 1.0)
+    
+    def _save_results(self):
+        """Save results to disk."""
+        # Save raw results
+        raw_path = Path(OUTPUT['raw_dir']) / f"raw_{self.timestamp}.json"
+        with open(raw_path, 'w') as f:
+            json.dump(self.results, f, indent=2, default=str)
+        
+        # Save processed results
+        processed = self._process_results()
+        processed_path = Path(OUTPUT['processed_dir']) / f"results_{self.timestamp}.json"
+        with open(processed_path, 'w') as f:
+            json.dump(processed, f, indent=2, default=str)
+    
+    def _process_results(self) -> Dict:
+        """Process raw results into analyzed format."""
+        processed = {
+            'metadata': {
+                'timestamp': self.timestamp,
+                'n_trials': len(self.results),
+                'models': list(set(r['model'] for r in self.results)),
+                'depths': sorted(list(set(r['depth'] for r in self.results)))
+            },
+            'by_model': {},
+            'by_depth': {}
+        }
+        
+        # Group by model
+        for result in self.results:
+            model = result['model']
+            if model not in processed['by_model']:
+                processed['by_model'][model] = []
+            processed['by_model'][model].append(result)
+        
+        # Group by depth
+        for result in self.results:
+            depth = result['depth']
+            if depth not in processed['by_depth']:
+                processed['by_depth'][depth] = []
+            processed['by_depth'][depth].append(result)
+        
+        return processed
+    
+    def _generate_summary(self) -> Dict:
+        """Generate summary statistics."""
+        summary = {'models': {}}
+        
+        # Calculate stats for each model
+        model_results = {}
+        for result in self.results:
+            model = result['model']
+            if model not in model_results:
+                model_results[model] = {'depths': {}, 'scores': []}
+            
+            depth = result['depth']
+            if depth not in model_results[model]['depths']:
+                model_results[model]['depths'][depth] = []
+            
+            score = result['scores']['total']
+            model_results[model]['depths'][depth].append(score)
+            model_results[model]['scores'].append(score)
+        
+        # Calculate means
+        for model, data in model_results.items():
+            summary['models'][model] = {
+                'mean_score': sum(data['scores']) / len(data['scores']),
+                'n_trials': len(data['scores']),
+                'by_depth': {}
+            }
+            
+            for depth, scores in data['depths'].items():
+                summary['models'][model]['by_depth'][depth] = {
+                    'mean': sum(scores) / len(scores),
+                    'std': self._calculate_std(scores),
+                    'n': len(scores)
+                }
+        
+        return summary
+    
+    def _calculate_std(self, values: List[float]) -> float:
+        """Calculate standard deviation."""
+        if len(values) < 2:
+            return 0.0
+        mean = sum(values) / len(values)
+        variance = sum((x - mean) ** 2 for x in values) / (len(values) - 1)
+        return variance ** 0.5
+
+
+def main():
+    """Main entry point."""
+    parser = argparse.ArgumentParser(description='Run LLM time decay experiment')
+    parser.add_argument('--models', nargs='+', default=['all'],
+                       help='Models to test (e.g., gpt-3.5 claude-3-haiku gemini-1.5-flash)')
+    parser.add_argument('--depths', default='fractional',
+                       choices=['fractional', 'integer', 'coarse', 'peak_mapping', 'extended'],
+                       help='Depth configuration to use')
+    parser.add_argument('--trials', type=int, default=50,
+                       help='Trials per condition')
+    parser.add_argument('--quiet', action='store_true',
+                       help='Suppress progress output')
+    
+    args = parser.parse_args()
+    
+    runner = ExperimentRunner(verbose=not args.quiet)
+    results = runner.run_experiment(
+        models=args.models,
+        depths=args.depths,
+        trials=args.trials
+    )
+    
+    # Print summary
+    print("\n=== EXPERIMENT SUMMARY ===")
+    for model, stats in results['models'].items():
+        print(f"\n{model}:")
+        print(f"  Overall mean: {stats['mean_score']:.3f}")
+        print(f"  Trials: {stats['n_trials']}")
+        print("  By depth:")
+        for depth in sorted(stats['by_depth'].keys()):
+            depth_stats = stats['by_depth'][depth]
+            print(f"    {depth}: {depth_stats['mean']:.3f} ± {depth_stats['std']:.3f}")
+
+
+if __name__ == "__main__":
+    main()

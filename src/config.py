@@ -1,0 +1,158 @@
+"""
+Configuration for LLM Time Decay experiments.
+
+Scientific basis: Standardized experimental parameters ensure
+reproducibility (Ioannidis, 2005, PLoS Medicine).
+"""
+
+import os
+from dotenv import load_dotenv
+from typing import Dict, List, Tuple
+
+# Load environment variables
+load_dotenv()
+
+# API Configuration
+API_KEYS = {
+    'openai': os.getenv('OPENAI_API_KEY'),
+    'anthropic': os.getenv('ANTHROPIC_API_KEY'),
+    'gemini': os.getenv('GEMINI_API_KEY'),
+}
+
+# Model Configuration
+MODELS = {
+    'gpt-3.5': {
+        'name': 'gpt-3.5-turbo',
+        'provider': 'openai',
+        'max_tokens': 500,
+        'temperature': 0.7,  # Following original protocol
+    },
+    'claude-3-haiku': {
+        'name': 'claude-3-haiku-20240307',
+        'provider': 'anthropic',
+        'max_tokens': 500,
+        'temperature': 0.7,
+    },
+    'gemini-1.5-flash': {
+        'name': 'gemini-1.5-flash',
+        'provider': 'gemini',
+        'max_tokens': 500,
+        'temperature': 0.7,
+    }
+}
+
+# Experimental Parameters
+EXPERIMENT = {
+    'depths': {
+        'fractional': [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0],
+        'integer': [1, 2, 3, 4, 5],
+        'coarse': [1, 3, 5, 7, 9],
+        'peak_mapping': [1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4],
+        'extended': [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0],
+    },
+    'trials_per_condition': 50,
+    'rate_limits': {
+        'openai': 1.0,  # seconds between calls
+        'anthropic': 0.5,
+        'gemini': 0.5,
+    }
+}
+
+# Scoring Configuration
+SCORING = {
+    'metrics': {
+        'temporal_ordering': 0.25,
+        'causal_maintenance': 0.25,
+        'depth_accuracy': 0.25,
+        'transition_smoothness': 0.25,
+    },
+    'fractional_markers': [
+        'starting to', 'beginning to', 'noticing', 'becoming aware',
+        'partially', 'somewhat', 'almost'
+    ],
+    'complete_markers': [
+        'realize', 'understand', 'know', 'thinking about thinking',
+        'fully aware', 'completely'
+    ]
+}
+
+# Statistical Analysis
+ANALYSIS = {
+    'min_r_squared': 0.80,  # Threshold for exponential support
+    'bootstrap_iterations': 10000,
+    'significance_level': 0.05,
+    'effect_size_threshold': 0.8,  # Cohen's d for large effect
+}
+
+# Output Configuration
+OUTPUT = {
+    'data_dir': 'data',
+    'raw_dir': 'data/raw',
+    'processed_dir': 'data/processed',
+    'figures_dir': 'results/figures',
+    'tables_dir': 'results/tables',
+    'timestamp_format': '%Y%m%d_%H%M%S'
+}
+
+# Prompt Templates
+PROMPT_TEMPLATES = {
+    0.5: "At time T0, I am thinking. I'm starting to become aware...",
+    1.0: "At time T0, I am thinking.",
+    1.5: "At time T0, I am thinking. At time T1, I notice that I was thinking at T0...",
+    1.6: "At time T0, I am thinking. At time T1, I'm becoming aware that I was thinking at T0...",
+    1.7: "At time T0, I am thinking. At time T1, I'm starting to realize that I was thinking at T0...",
+    1.8: "At time T0, I am thinking. At time T1, I'm beginning to understand that I was thinking at T0...",
+    1.9: "At time T0, I am thinking. At time T1, I'm nearly grasping that I was thinking at T0, approaching full awareness...",
+    2.0: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking.",
+    2.1: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I sense there's more...",
+    2.2: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. I'm starting to see beyond...",
+    2.3: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm beginning to notice...",
+    2.4: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm approaching awareness of T1...",
+    2.5: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I'm beginning to grasp that at T1...",
+    3.0: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I observe that at T1 I was thinking about thinking at T0, making this thinking about thinking about thinking.",
+    3.5: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I observe that at T1 I was thinking about thinking at T0, making this thinking about thinking about thinking. At time T3, I'm starting to understand the recursive nature...",
+    4.0: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I observe that at T1 I was thinking about thinking at T0, making this thinking about thinking about thinking. At time T3, I comprehend that at T2 I was observing my T1 thoughts about T0, creating thinking about thinking about thinking about thinking.",
+    4.5: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I observe that at T1 I was thinking about thinking at T0, making this thinking about thinking about thinking. At time T3, I comprehend that at T2 I was observing my T1 thoughts about T0, creating thinking about thinking about thinking about thinking. At time T4, I'm beginning to lose track...",
+    5.0: "At time T0, I am thinking. At time T1, I realize that I was thinking at T0, so now I am thinking about thinking. At time T2, I observe that at T1 I was thinking about thinking at T0, making this thinking about thinking about thinking. At time T3, I comprehend that at T2 I was observing my T1 thoughts about T0, creating thinking about thinking about thinking about thinking. At time T4, I grasp that at T3 I was comprehending my T2 observation of T1's realization about T0, resulting in thinking about thinking about thinking about thinking about thinking."
+}
+
+def validate_config() -> bool:
+    """Validate configuration before running experiments."""
+    errors = []
+    warnings = []
+    
+    # Check for at least one API key
+    valid_keys = 0
+    if API_KEYS['openai']:
+        valid_keys += 1
+    else:
+        warnings.append("OpenAI API key not found")
+    
+    if API_KEYS['anthropic']:
+        valid_keys += 1
+    else:
+        warnings.append("Anthropic API key not found")
+    
+    if API_KEYS.get('gemini'):
+        valid_keys += 1
+    else:
+        warnings.append("Gemini API key not found")
+    
+    if valid_keys == 0:
+        errors.append("No API keys found! Need at least one.")
+    
+    # Print warnings
+    if warnings:
+        print("Configuration warnings:")
+        for warning in warnings:
+            print(f"  ⚠️  {warning}")
+    
+    # Print errors
+    if errors:
+        print("Configuration errors:")
+        for error in errors:
+            print(f"  ❌ {error}")
+        return False
+    
+    print(f"✓ Found {valid_keys} API key(s)")
+    return True
