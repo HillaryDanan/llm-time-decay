@@ -33,7 +33,7 @@ class PromptGenerator:
             Following exponential growth in semantic complexity
         """
         if depth not in self.templates:
-            raise ValueError(f"Unsupported depth: {depth}. Use 0.5 increments from 0.5 to 5.0")
+                raise ValueError(f"Unsupported depth: {depth}. Add prompt to PROMPT_TEMPLATES in config.py")
         
         prompt = self.templates[depth]
         

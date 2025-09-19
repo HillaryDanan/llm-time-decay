@@ -330,7 +330,7 @@ def main():
     parser.add_argument('--models', nargs='+', default=['all'],
                        help='Models to test (e.g., gpt-3.5 claude-3-haiku gemini-1.5-flash)')
     parser.add_argument('--depths', default='fractional',
-                       choices=['fractional', 'integer', 'coarse', 'peak_mapping', 'extended', 'ultra_fine'],
+                       choices=['fractional', 'integer', 'coarse'],
                        help='Depth configuration to use')
     parser.add_argument('--trials', type=int, default=50,
                        help='Trials per condition')
